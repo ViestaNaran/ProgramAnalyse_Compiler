@@ -1,0 +1,98 @@
+#include <stdlib.h>
+#include <string.h>
+
+char Data_Type[50];
+
+int numOfIdentifiers = 0;
+
+struct IdentifierStructure
+{
+    char* value;
+    char* data_type;
+}identifiers[20];
+
+extern int yylineno;
+
+void showIdentifiers() {
+    int i;
+    for(i=0; i<numOfIdentifiers; i++) {
+        printf("%s\n", identifiers[i].value);
+    }
+}
+
+
+void clearBuffers() {
+    int i=0;
+    while(Data_Type[i] != '\0') {
+        Data_Type[i] = '\0';
+        i++;
+    }
+}
+
+void storeDataType(char* data_type){
+    int i=0;
+    while(data_type[i] != '\0') {
+        Data_Type[i] = data_type[i];
+        i++;
+    }
+}
+
+char* retrieveDataType() {
+    return Data_Type;
+}
+
+int isDuplicate(char* identifier, char* identifier_data_type) {
+    int i;
+    for(i=0; i<numOfIdentifiers; i++){
+        if(strcmp(identifier, identifiers[i].value) == 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+
+/*
+Function to extract the identifier name from an array.
+Eg. This function would extract "a" from "a[10]"
+*/
+
+char* extractIdentifier(char* arrayIdentifier) {
+    char extractedIdentifier[50];
+    static char copied[50];
+
+    int i=0;
+
+    while(arrayIdentifier[i] != '[') {
+        extractedIdentifier[i] = arrayIdentifier[i];
+        i++;
+    }
+    extractedIdentifier[i] = '\0';
+
+    i=0;
+    while(extractedIdentifier[i] != '\0') {
+        copied[i] = extractedIdentifier[i];
+        i++;
+    }
+
+    copied[i] = '\0';
+    return copied;
+}
+
+
+//Function to store all identifiers and check for duplicates
+void storeIdentifier(char* identifier, char* identifier_data_type) {
+    identifiers[numOfIdentifiers].value = identifier;
+    identifiers[numOfIdentifiers].data_type = identifier_data_type;
+    numOfIdentifiers+=1;
+}
+
+void AssignmentError(char* data_type) {
+    printf("\nERROR ON LINE NUMBER %d : \nInvalid assignment! Expected '%s', but found %s \n", yylineno,Data_Type,data_type);
+    exit(0);
+}
+
+void DuplicateIdentifierError(char* identifier){
+    printf("\nERROR ON LINE NUMBER %d : \nDuplicate identifier '%s' found. \n", yylineno,identifier);
+    exit(0);
+}
