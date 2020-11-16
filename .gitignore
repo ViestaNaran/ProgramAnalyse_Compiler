@@ -3,4 +3,7 @@ Java\ implementation/.DS_Store
 Java\ implementation/out/
 Java\ implementation/.idea
 Java\ implementation/ProgramAnalysis.iml
-.vscode
+CompilerCode/.vscode
+CompilerCode/y.tab.c
+CompilerCode/y.tab.h
+CompilerCode/lex.yy.c
