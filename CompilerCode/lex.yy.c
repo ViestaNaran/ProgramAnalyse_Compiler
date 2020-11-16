@@ -825,49 +825,49 @@ YY_RULE_SETUP
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 31 "semantics.l"
+#line 32 "semantics.l"
 {yylval.charVal = yytext[1];  return CHARACTER_VALUE;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 32 "semantics.l"
+#line 33 "semantics.l"
 {yylval.intVal = atoi(yytext);  return INT_VALUE;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 35 "semantics.l"
+#line 36 "semantics.l"
 {yylval.strVal = strdup(yytext);  return ARRAY_IDENTIFIER;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 36 "semantics.l"
+#line 37 "semantics.l"
 {yylval.dataType = strdup(yytext);  return IDENTIFIER; }
 	YY_BREAK
 case 20:
 /* rule 20 can match eol */
 YY_RULE_SETUP
-#line 38 "semantics.l"
+#line 39 "semantics.l"
 {yylval.strVal = strdup(yytext);  return STRING_VALUE; }
 	YY_BREAK
 case 21:
 /* rule 21 can match eol */
 YY_RULE_SETUP
-#line 41 "semantics.l"
+#line 42 "semantics.l"
 {yylineno++;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 42 "semantics.l"
+#line 43 "semantics.l"
 ;
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 43 "semantics.l"
+#line 44 "semantics.l"
 {InvalidToken();}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 45 "semantics.l"
+#line 46 "semantics.l"
 ECHO;
 	YY_BREAK
 #line 874 "lex.yy.c"
@@ -1867,7 +1867,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 45 "semantics.l"
+#line 46 "semantics.l"
 
 
 

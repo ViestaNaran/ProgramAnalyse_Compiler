@@ -84,11 +84,11 @@
     extern int yylineno;
     
 
-    // void storeDataType(char*);
+    void storeDataType(char*);
     int isDuplicate(char*, char*);
     void storeIdentifier(char*, char*);
     void DuplicateIdentifier(char*);
-    // char* retrieveDataType();
+    char* retrieveDataType();
     void clearBuffers();
     int isValidAssignment(char*);
     void AssignmentError(char*);
@@ -613,8 +613,8 @@ static const yytype_int8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    66,    66,    67,    69,    72,    80,    82,    84,    94,
-     107,   109,   118,   122,   126,   127,   128,   129
+       0,    67,    67,    68,    70,    73,    81,    83,    85,    95,
+     108,   110,   119,   123,   131,   132,   133,   134
 };
 #endif
 
@@ -1207,25 +1207,25 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* DECLARATION: EXPRESSION SEMI_COLON  */
-#line 66 "syntax2.y"
+#line 67 "syntax2.y"
                                                       { clearBuffers(); }
 #line 1213 "y.tab.c"
     break;
 
   case 3: /* DECLARATION: DECLARATION EXPRESSION SEMI_COLON  */
-#line 67 "syntax2.y"
+#line 68 "syntax2.y"
                                                       { clearBuffers(); }
 #line 1219 "y.tab.c"
     break;
 
   case 4: /* DECLARATION: error '>'  */
-#line 69 "syntax2.y"
+#line 70 "syntax2.y"
                                         { /* '>' stops the execution */}
 #line 1225 "y.tab.c"
     break;
 
   case 5: /* EXPRESSION: DATA_TYPE IDENTIFIER  */
-#line 72 "syntax2.y"
+#line 73 "syntax2.y"
                                                       {
                                                          if(!isDuplicate((yyvsp[0].strVal), retrieveDataType())) {
                                                              storeIdentifier((yyvsp[0].strVal), retrieveDataType());
@@ -1238,19 +1238,19 @@ yyreduce:
     break;
 
   case 6: /* EXPRESSION: EXPRESSION COLON EQUALTO NUMBER  */
-#line 80 "syntax2.y"
+#line 81 "syntax2.y"
                                                        {;}
 #line 1244 "y.tab.c"
     break;
 
   case 7: /* EXPRESSION: IDENTIFIER EQUALTO NUMBER  */
-#line 82 "syntax2.y"
-                                                        {;}
+#line 83 "syntax2.y"
+                                                       {;}
 #line 1250 "y.tab.c"
     break;
 
   case 8: /* EXPRESSION: EXPRESSION COMMA IDENTIFIER  */
-#line 85 "syntax2.y"
+#line 86 "syntax2.y"
                                                         {
                                                             if(!isDuplicate((yyvsp[0].strVal), retrieveDataType())) {
                                                                 storeIdentifier((yyvsp[0].strVal), retrieveDataType());
@@ -1262,7 +1262,7 @@ yyreduce:
     break;
 
   case 9: /* EXPRESSION: DATA_TYPE ARRAY_IDENTIFIER  */
-#line 95 "syntax2.y"
+#line 96 "syntax2.y"
                                                         {
                                                             strcpy(extractedIdentifier[numOfArrayIdentifiers], extractIdentifier((yyvsp[0].strVal)));
                                                             if(!isDuplicate(extractedIdentifier[numOfArrayIdentifiers], retrieveDataType())) {
@@ -1277,7 +1277,7 @@ yyreduce:
     break;
 
   case 11: /* EXPRESSION: EXPRESSION COMMA ARRAY_IDENTIFIER  */
-#line 109 "syntax2.y"
+#line 110 "syntax2.y"
                                                         {
                                                             strcpy(extractedIdentifier[numOfArrayIdentifiers], extractIdentifier((yyvsp[0].strVal)));
                                                             if(!isDuplicate(extractedIdentifier[numOfArrayIdentifiers], retrieveDataType())) {
@@ -1291,19 +1291,19 @@ yyreduce:
     break;
 
   case 12: /* EXPRESSION: error '>'  */
-#line 118 "syntax2.y"
+#line 119 "syntax2.y"
                                                         {/* no need to call yyerror cuz of line 1570 of y.tab.c*/}
 #line 1297 "y.tab.c"
     break;
 
   case 13: /* NUMBER: INT_VALUE  */
-#line 122 "syntax2.y"
+#line 123 "syntax2.y"
                             {if(!isValidAssignment("int")) { AssignmentError(itoa((yyvsp[0].intVal)));}}
 #line 1303 "y.tab.c"
     break;
 
   case 16: /* PARAMETERS: NUMBER EQUALTO NUMBER  */
-#line 128 "syntax2.y"
+#line 133 "syntax2.y"
                                             { yyerror("Single equal sign implies check, colon followed by equal signigies assignment");}
 #line 1309 "y.tab.c"
     break;
@@ -1503,7 +1503,7 @@ yyreturn:
   return yyresult;
 }
 
-#line 135 "syntax2.y"
+#line 137 "syntax2.y"
 
 
 int main() {

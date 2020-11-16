@@ -60,7 +60,7 @@
 
 %type <strVal> DECLARATION
 %type <strVal> EXPRESSION
-%type <strVal> LOOP
+// %type <strVal> LOOP
 
 %%
 
@@ -69,9 +69,6 @@ DECLARATION :    EXPRESSION SEMI_COLON                { clearBuffers(); }
             
             |    error '>'              { /* '>' stops the execution */}
     ;
-
-
-LOOP        :    KEYWORD OPEN_BRACKET PARAMETERS CLOSE_BRACKET CURLY_BRACE_OPEN EXPRESSION CURLY_BRACE_CLOSE    
 
 EXPRESSION :    DATA_TYPE   IDENTIFIER                {
                                                          if(!isDuplicate($2, retrieveDataType())) {
@@ -127,14 +124,15 @@ NUMBER  :   INT_VALUE       {if(!isValidAssignment("int")) { AssignmentError(ito
     ;
 
 
+/*LOOP        :    KEYWORD OPEN_BRACKET PARAMETERS CLOSE_BRACKET CURLY_BRACE_OPEN EXPRESSION CURLY_BRACE_CLOSE   */
+   /* ; */
+
+
 PARAMETERS  :   NUMBER
             |   PARAMETERS  COMMA   NUMBER
             |   NUMBER EQUALTO NUMBER       { yyerror("Single equal sign implies check, colon followed by equal signigies assignment");}
             |   error '>'
     ;
-
-
-
 
 %%
 

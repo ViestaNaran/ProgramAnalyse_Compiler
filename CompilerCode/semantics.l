@@ -28,6 +28,7 @@ linefeed        \n
 "["                 { return SQUARE_BRACKET_OPEN; }
 "]"                 { return SQUARE_BRACKET_CLOSE; }
 
+
 [\'][a-zA-Z][\']    {yylval.charVal = yytext[1];  return CHARACTER_VALUE;}
 [-+]?[0-9]+         {yylval.intVal = atoi(yytext);  return INT_VALUE;}
 
