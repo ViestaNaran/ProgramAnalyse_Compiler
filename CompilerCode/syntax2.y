@@ -14,11 +14,11 @@
     extern int yylineno;
     
 
-    // void storeDataType(char*);
+    void storeDataType(char*);
     int isDuplicate(char*, char*);
     void storeIdentifier(char*, char*);
     void DuplicateIdentifier(char*);
-    // char* retrieveDataType();
+    char* retrieveDataType();
     void clearBuffers();
     int isValidAssignment(char*);
     void AssignmentError(char*);
@@ -60,6 +60,7 @@
 
 %type <strVal> DECLARATION
 %type <strVal> EXPRESSION
+%type <strVal> LOOP
 
 %%
 
@@ -68,6 +69,9 @@ DECLARATION :    EXPRESSION SEMI_COLON                { clearBuffers(); }
             
             |    error '>'              { /* '>' stops the execution */}
     ;
+
+
+LOOP        :    KEYWORD OPEN_BRACKET PARAMETERS CLOSE_BRACKET CURLY_BRACE_OPEN EXPRESSION CURLY_BRACE_CLOSE    
 
 EXPRESSION :    DATA_TYPE   IDENTIFIER                {
                                                          if(!isDuplicate($2, retrieveDataType())) {
@@ -79,7 +83,7 @@ EXPRESSION :    DATA_TYPE   IDENTIFIER                {
                                                         }
             |   EXPRESSION COLON EQUALTO NUMBER        {;}
 
-            |   IDENTIFIER EQUALTO NUMBER               {;}
+            |   IDENTIFIER EQUALTO NUMBER              {;}
 
             |   EXPRESSION COMMA IDENTIFIER           
                                                         {
