@@ -15,6 +15,7 @@ private:
 
 public:
     Identifiers getUsedVariables();
+    Identifiers getUsedVariablesInIndex();
     string toString();
     string name;
     Array(string name, Arithmetic index);

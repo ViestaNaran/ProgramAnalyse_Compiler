@@ -17,6 +17,10 @@ Identifiers Array::getUsedVariables() {
     return id.merge(index.getUsedVariables());
 }
 
+Identifiers Array::getUsedVariablesInIndex() {
+    return index.getUsedVariables();
+}
+
 string Array::toString() {
     return this->name + "[" + index.toString() + "]";
 }
