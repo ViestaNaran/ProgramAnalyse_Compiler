@@ -20,10 +20,10 @@ class ProgramGraph {
 private:
     const vector<Edge> edges;
 //    void makeEdges(string statement, int qStart, int qEnd);
-    void makeEdges(string statement, int qStart, int qEnd) {
-        string seperator = " SEMICOLON ";
-    
-    }
+//    void makeEdges(string statement, int qStart, int qEnd) {
+//        string seperator = " SEMICOLON ";
+//
+//    }
 public:
     vector<string> variables;
     int n;
@@ -31,7 +31,7 @@ public:
     ProgramGraph(string filename);
     vector<Edge> getEdges(int q);
     void print();
-    
+
 };
 
 #endif /* ProgramGraph_h */

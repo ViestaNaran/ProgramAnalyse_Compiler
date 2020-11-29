@@ -11,14 +11,14 @@
 
 #include <stdio.h>
 
-#include <vector>
+#include "../../Identifiers.h"
 
 using namespace std;
 
 class Arithmetic {
     
 public:
-    virtual vector<string> fv();
+    virtual Identifiers getUsedVariables();
     virtual string toString();
 };
 

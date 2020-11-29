@@ -9,16 +9,12 @@
 #include "ProgramGraph.h"
 
 ProgramGraph::ProgramGraph(vector<Edge> edges, int n, vector<string> variables) {
-    
+
     // this->variables.push_back(variables); //This needs clarrification
     edges = this->edges;
     n = this->n;
 }
 
-ProgramGraph::ProgramGraph(string filename) {
-}
 
 void ProgramGraph::print() {
 }
-
-

@@ -13,15 +13,17 @@
 #include <string>
 #include <set>
 #include "Arithmetic.h"
+#include "../../Identifiers.h"
 
 class Operation : public Arithmetic {
 private:
-    const string operation;
-    const Arithmetic arith_1;
-    const Arithmetic arith_2;
+    string op;  /* can be "-", "+" and maybe "*" or "/" */
+    Arithmetic a1;
+    Arithmetic a2;
     
-    Operation(string operation, Arithmetic a1, Arithmetic a2);
-    vector<string> fv();
+public:
+    Operation(string op, Arithmetic a1, Arithmetic a2);
+    Identifiers getUsedVariables();
     string toString();
 };
 

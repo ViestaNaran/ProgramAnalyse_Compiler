@@ -7,11 +7,12 @@
 //
 
 #include "Edge.h"
+#include "Action.h"
 
-
-Edge::Edge(int s, int e) {
+Edge::Edge(int s, int e, Action a) {
     s = this->start;
     e = this->end;
+    a = this->a;
 }
 
 int Edge::getEnd() {
@@ -22,4 +23,6 @@ int Edge::getStart() {
     return this->start;
 }
 
-
+Action Edge::getAction() {
+  return this->a;
+}
