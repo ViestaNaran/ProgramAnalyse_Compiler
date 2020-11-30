@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include <string>
-#include "Action.h"
+#include "./BasicActions/Action.h"
 
 using namespace std;
 
@@ -19,13 +19,13 @@ class Edge {
 private:
     int start;
     int end;
-    Action a;
+    Action *a;
 
 public:
-    Edge(int s, int e, Action a);
+    Edge(int s, int e, Action *a);
     int getEnd();
     int getStart();
-    Action getAction();
+    Action * getAction();
     string toString();
 };
 
