@@ -22,6 +22,6 @@ int Edge::getStart() {
     return this->start;
 }
 
-Action Edge::*getAction() {
+Action * Edge::getAction() {
     return this->a;
 }
