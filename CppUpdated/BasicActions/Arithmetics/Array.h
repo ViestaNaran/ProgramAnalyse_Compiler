@@ -11,14 +11,14 @@ using namespace std;
 class Array : public Arithmetic {
     
 private:
-    Arithmetic index;
+    Arithmetic* index;
 
 public:
     Identifiers getUsedVariables();
     Identifiers getUsedVariablesInIndex();
     string toString();
     string name;
-    Array(string name, Arithmetic index);
+    Array(string name, Arithmetic* index);
 };
 
 #endif /* Array_h */

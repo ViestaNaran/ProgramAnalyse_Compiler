@@ -13,13 +13,13 @@ Identifiers ReadArray::getUsedVariables() {
 }
 
 Identifiers ReadArray::getDefinedVariables() {
-    return this->A.getUsedVariables();
+    return this->A->getUsedVariables();
 }
 
-ReadArray::ReadArray(Array A) {
+ReadArray::ReadArray(Array *A) {
     this->A = A;
 }
 
 string ReadArray::toString() {
-    return "read " + A.toString();
+    return "read " + A->toString();
 }

@@ -15,8 +15,8 @@ using namespace std;
 class ArrayAssignment: public Action {
 
 private:
-    Array A;
-    Arithmetic a;
+    Array* A;
+    Arithmetic* a;
 
 public:
     string getType();

@@ -14,14 +14,14 @@ using namespace std;
 class ReadArray: public Action {
 
 private:
-    Array A;
+    Array* A;
 
 public:
     string getType();
     Identifiers getUsedVariables();
     Identifiers getDefinedVariables();
     string toString();
-    ReadArray(Array A);
+    ReadArray(Array* A);
 };
 
 #endif /* VariableAssignment_h */

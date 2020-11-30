@@ -15,16 +15,16 @@ using namespace std;
 class RecordAssignment: public Action {
 
 private:
-    Record R;
+    Record* R;
     string field;
-    Arithmetic a;
+    Arithmetic* a;
 
 public:
     string getType();
     Identifiers getUsedVariables();
     Identifiers getDefinedVariables();
     string toString();
-    RecordAssignment(Record A, string field, Arithmetic a);
+    RecordAssignment(Record* A, string field, Arithmetic* a);
 };
 
 #endif /* RecordAssignment_h */

@@ -13,13 +13,13 @@ Identifiers ReadVariable::getUsedVariables() {
 }
 
 Identifiers ReadVariable::getDefinedVariables() {
-    return this->x.getUsedVariables();
+    return this->x->getUsedVariables();
 }
 
-ReadVariable::ReadVariable(Variable x) {
+ReadVariable::ReadVariable(Variable* x) {
     this->x = x;
 }
 
 string ReadVariable::toString() {
-    return "read " + x.toString();
+    return "read " + x->toString();
 }

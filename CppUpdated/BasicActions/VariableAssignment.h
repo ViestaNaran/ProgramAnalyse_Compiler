@@ -15,15 +15,15 @@ using namespace std;
 class VariableAssignment: public Action {
 
 private:
-    Variable x;
-    Arithmetic a;
+    Variable* x;
+    Arithmetic* a;
 
 public:
     string getType();
     Identifiers getUsedVariables();
     Identifiers getDefinedVariables();
     string toString();
-    VariableAssignment(Variable x, Arithmetic a);
+    VariableAssignment(Variable* x, Arithmetic* a);
 };
 
 #endif /* VariableAssignment_h */

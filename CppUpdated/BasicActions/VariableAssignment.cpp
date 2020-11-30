@@ -6,18 +6,18 @@ string VariableAssignment::getType() {
 }
 
 Identifiers VariableAssignment::getUsedVariables() {
-    return this->a.getUsedVariables();
+    return this->a->getUsedVariables();
 }
 
 Identifiers VariableAssignment::getDefinedVariables() {
-    return this->x.getUsedVariables();
+    return this->x->getUsedVariables();
 }
 
-VariableAssignment::VariableAssignment(Variable x, Arithmetic a) {
+VariableAssignment::VariableAssignment(Variable* x, Arithmetic* a) {
     this->x = x;
     this->a = a;
 }
 
 string VariableAssignment::toString() {
-    return x.toString() + " := " + a.toString();
+    return x->toString() + " := " + a->toString();
 }
