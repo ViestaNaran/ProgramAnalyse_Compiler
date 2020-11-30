@@ -18,8 +18,8 @@ using namespace std;
 class Arithmetic {
     
 public:
-    virtual Identifiers getUsedVariables();
-    virtual string toString();
+    virtual Identifiers getUsedVariables()=0;
+    virtual string toString()=0;
 };
 
 #endif /* Arithmetic_h */

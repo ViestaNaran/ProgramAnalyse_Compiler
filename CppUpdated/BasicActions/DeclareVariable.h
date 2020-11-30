@@ -1,6 +1,6 @@
 
-#ifndef ReadVariable_h
-#define ReadVariable_h
+#ifndef DeclareVariable_h
+#define DeclareVariable_h
 
 #include <stdio.h>
 #include <string>
@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class ReadVariable: public Action {
+class DeclareVariable: public Action {
 
 private:
     Variable* x;
@@ -21,7 +21,7 @@ public:
     Identifiers getUsedVariables();
     Identifiers getDefinedVariables();
     string toString();
-    ReadVariable(Variable* x);
+    DeclareVariable(Variable* x);
 };
 
-#endif /* ReadVariable_h */
+#endif /* DeclareVariable_h */

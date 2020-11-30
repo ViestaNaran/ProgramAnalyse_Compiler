@@ -18,9 +18,9 @@ Identifiers ArrayAssignment::getDefinedVariables() {
     return Identifiers(variables, arrays, records);
 }
 
-ArrayAssignment::ArrayAssignment(Array A, Arithmetic a) {
-    this->A = &A;
-    this->a = &a;
+ArrayAssignment::ArrayAssignment(Array* A, Arithmetic* a) {
+    this->A = A;
+    this->a = a;
 }
 
 string ArrayAssignment::toString() {

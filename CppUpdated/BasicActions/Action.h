@@ -18,10 +18,10 @@ using namespace std;
 class Action {
 
 public:
-    virtual string getType();
-    virtual Identifiers getUsedVariables();
-    virtual Identifiers getDefinedVariables();
-    virtual string toString();
+    virtual string getType()=0;
+    virtual Identifiers getUsedVariables()=0;
+    virtual Identifiers getDefinedVariables()=0;
+    virtual string toString()=0;
 };
 
 #endif /* Action_h */

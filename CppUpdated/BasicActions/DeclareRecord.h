@@ -1,27 +1,27 @@
 
-#ifndef ReadVariable_h
-#define ReadVariable_h
+#ifndef DeclareRecord_h
+#define DeclareRecord_h
 
 #include <stdio.h>
 #include <string>
 #include "../Identifiers.h"
 #include "Action.h"
-#include "Arithmetics/Variable.h"
+#include "Arithmetics/Record.h"
 
 
 using namespace std;
 
-class ReadVariable: public Action {
+class DeclareRecord: public Action {
 
 private:
-    Variable* x;
+    string R;
 
 public:
     string getType();
     Identifiers getUsedVariables();
     Identifiers getDefinedVariables();
     string toString();
-    ReadVariable(Variable* x);
+    DeclareRecord(string R);
 };
 
-#endif /* ReadVariable_h */
+#endif /* DeclareRecord_h */

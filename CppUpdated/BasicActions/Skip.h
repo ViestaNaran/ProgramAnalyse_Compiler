@@ -1,6 +1,6 @@
 
-#ifndef ReadVariable_h
-#define ReadVariable_h
+#ifndef Skip_h
+#define Skip_h
 
 #include <stdio.h>
 #include <string>
@@ -11,17 +11,14 @@
 
 using namespace std;
 
-class ReadVariable: public Action {
-
-private:
-    Variable* x;
+class Skip: public Action {
 
 public:
     string getType();
     Identifiers getUsedVariables();
     Identifiers getDefinedVariables();
     string toString();
-    ReadVariable(Variable* x);
+    Skip();
 };
 
-#endif /* ReadVariable_h */
+#endif /* Skip_h */

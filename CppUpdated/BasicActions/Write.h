@@ -1,21 +1,19 @@
 
-#ifndef ArrayAssignment_h
-#define ArrayAssignment_h
+#ifndef Write_h
+#define Write_h
 
 #include <stdio.h>
 #include <string>
 #include "../Identifiers.h"
 #include "Action.h"
-#include "Arithmetics/Arithmetic.h"
-#include "Arithmetics/Array.h"
+#include "Arithmetics/Variable.h"
 
 
 using namespace std;
 
-class ArrayAssignment: public Action {
+class Write: public Action {
 
 private:
-    Array* A;
     Arithmetic* a;
 
 public:
@@ -23,7 +21,7 @@ public:
     Identifiers getUsedVariables();
     Identifiers getDefinedVariables();
     string toString();
-    ArrayAssignment(Array* A, Arithmetic* a);
+    Write(Arithmetic* a);
 };
 
-#endif /* ArrayAssignment_h */
+#endif /* Write_h */
