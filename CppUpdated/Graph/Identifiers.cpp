@@ -8,7 +8,7 @@
 Identifiers::Identifiers() {
 }
 
-Identifiers::merge(Identifiers i){
+Identifiers Identifiers::merge(Identifiers i){
     Identifiers merged;
     for (auto var : i.getVariables()){
         merged.addVariable(var);
@@ -31,27 +31,27 @@ Identifiers::merge(Identifiers i){
     return merged;
 }
 
-Identifiers::addVariable(string variable) {
+void Identifiers::addVariable(string variable) {
     this->variables.insert(variable);    
 }
 
-Identifiers::addArray(string array) {
+void Identifiers::addArray(string array) {
     this->arrays.insert(array);    
 }
 
-Identifiers::addRecord(string record) {
+void Identifiers::addRecord(string record) {
     this->records.insert(record);
 }
 
-Identifiers::getVariables(){
+unordered_set<string> Identifiers::getVariables(){
     return this->variables;
 }
 
-Identifiers::getArrays(){
+unordered_set<string> Identifiers::getArrays(){
     return this->arrays;
 }
 
-Identifiers::getRecords(){
+unordered_set<string> Identifiers::getRecords(){
     return this->records;
 }
 
