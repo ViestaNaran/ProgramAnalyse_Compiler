@@ -4,7 +4,7 @@
 
 
 void ReachingDefinitions::setToBottom(int q){
-
+    AA[q].clear();
 }
 
 
