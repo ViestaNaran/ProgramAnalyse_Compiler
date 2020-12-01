@@ -8,6 +8,10 @@ Array::Array(string name, Arithmetic* index) {
     this->index = index;
 }
 
+string Array::getType() {
+    return "array";
+}
+
 Identifiers Array::getUsedVariables() {
     Identifiers i;
     i.addArray(name);

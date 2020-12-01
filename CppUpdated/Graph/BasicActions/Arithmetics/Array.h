@@ -14,6 +14,7 @@ private:
     Arithmetic* index;
 
 public:
+    string getType();
     Identifiers getUsedVariables();
     Identifiers getUsedVariablesInIndex();
     string toString();

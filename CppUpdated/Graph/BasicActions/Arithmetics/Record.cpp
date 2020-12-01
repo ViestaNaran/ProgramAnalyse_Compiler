@@ -8,6 +8,10 @@ Record::Record(string name, string field) {
     this->field = field;
 }
 
+string Record::getType() {
+    return "record";
+}
+
 Identifiers Record::getUsedVariables() {
     Identifiers i;
     i.addRecord(name);

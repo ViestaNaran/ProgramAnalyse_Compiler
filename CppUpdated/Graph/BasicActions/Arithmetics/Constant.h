@@ -12,6 +12,7 @@ class Constant : public Arithmetic {
     
 
 public:
+    string getType();
     Identifiers getUsedVariables();
     string toString();
     int value;

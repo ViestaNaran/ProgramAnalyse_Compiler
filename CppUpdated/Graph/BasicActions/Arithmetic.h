@@ -18,6 +18,7 @@ using namespace std;
 class Arithmetic {
     
 public:
+    virtual string getType();
     virtual Identifiers getUsedVariables()=0;
     virtual string toString()=0;
 };

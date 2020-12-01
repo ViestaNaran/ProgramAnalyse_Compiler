@@ -6,6 +6,10 @@ Constant::Constant(int value){
     this->value = value;
 }
 
+string Constant::getType() {
+    return "constant";
+}
+
 Identifiers Constant::getUsedVariables() {
     return Identifiers();
 }

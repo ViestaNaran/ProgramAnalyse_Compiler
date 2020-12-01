@@ -17,11 +17,13 @@
 
 class Operation : public Arithmetic {
 private:
+    
+public:
     string op;  /* can be "-", "+" and maybe "*" or "/" */
     Arithmetic* a1;
     Arithmetic* a2;
     
-public:
+    string getType();
     Operation(string op, Arithmetic* a1, Arithmetic* a2);
     Identifiers getUsedVariables();
     string toString();

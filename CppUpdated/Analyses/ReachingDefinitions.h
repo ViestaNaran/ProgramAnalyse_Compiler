@@ -3,6 +3,7 @@
 
 
 #include <stdio.h>
+#include <vector>
 #include "../Graph/Edge.h"
 #include "../Analysis.h"
 #include "RDTriple.h"

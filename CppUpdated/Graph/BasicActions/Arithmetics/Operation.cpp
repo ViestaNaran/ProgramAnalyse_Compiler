@@ -14,6 +14,10 @@ Operation::Operation(string operation, Arithmetic* a1, Arithmetic* a2) {
     this->a2 = a2;
 }
 
+string Operation::getType() {
+    return "operation";
+}
+
 Identifiers Operation::getUsedVariables() {
     return a1->getUsedVariables().merge(a2->getUsedVariables());
 }

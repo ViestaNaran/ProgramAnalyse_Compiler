@@ -7,6 +7,10 @@ Variable::Variable(string name) {
     this->name = name;
 }
 
+string Variable::getType() {
+    return "variable"
+}
+
 Identifiers Variable::getUsedVariables() {
     Identifiers i;
     i.addVariable(name);

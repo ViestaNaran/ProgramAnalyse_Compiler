@@ -12,6 +12,7 @@ class Variable : public Arithmetic {
     
 
 public:
+    string getType();
     Identifiers getUsedVariables();
     string toString();
     string name;

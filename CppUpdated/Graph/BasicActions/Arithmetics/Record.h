@@ -14,6 +14,7 @@ private:
     string field;
 
 public:
+    string getType();
     Identifiers getUsedVariables();
     string toString();
     string name;
