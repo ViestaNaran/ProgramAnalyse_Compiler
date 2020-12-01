@@ -10,25 +10,22 @@
 #define ProgramGraph_h
 
 #include <stdio.h>
+#include <iostream>
+#include <algorithm>
 #include <vector>
-#include <set>
 #include <cstring>
 
 #include "Edge.h"
+#include "Identifiers.h"
 
 class ProgramGraph {
 private:
-    const vector<Edge> edges;
-//    void makeEdges(string statement, int qStart, int qEnd);
-//    void makeEdges(string statement, int qStart, int qEnd) {
-//        string seperator = " SEMICOLON ";
-//
-//    }
+    vector<Edge> edges;
+    Identifiers* var;
+    void sortEdges();
 public:
-    vector<string> variables;
     int n;
-    ProgramGraph(vector<Edge> edges, int n, vector<string> variables);
-    ProgramGraph(string filename);
+    ProgramGraph(vector<Edge> edges, int n, Identifiers* var);
     vector<Edge> getEdges(int q);
     void print();
 

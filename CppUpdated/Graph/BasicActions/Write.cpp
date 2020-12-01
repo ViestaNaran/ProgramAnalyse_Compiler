@@ -6,10 +6,7 @@ string Write::getType() {
 }
 
 Identifiers Write::getUsedVariables() {
-    vector<string> variables;
-    vector<string> arrays;
-    vector<string> records;
-    return Identifiers(variables, arrays, records);
+    return Identifiers();
 }
 
 Identifiers Write::getDefinedVariables() {

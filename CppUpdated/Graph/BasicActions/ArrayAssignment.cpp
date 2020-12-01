@@ -11,11 +11,9 @@ Identifiers ArrayAssignment::getUsedVariables() {
 }
 
 Identifiers ArrayAssignment::getDefinedVariables() {
-    vector<string> variables;
-    vector<string> arrays;
-    arrays.push_back(A->name);
-    vector<string> records;
-    return Identifiers(variables, arrays, records);
+    Identifiers i;
+    i.addArray(A->name);
+    return i;
 }
 
 ArrayAssignment::ArrayAssignment(Array* A, Arithmetic* a) {

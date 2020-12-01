@@ -6,10 +6,7 @@ string ReadVariable::getType() {
 }
 
 Identifiers ReadVariable::getUsedVariables() {
-    vector<string> variables;
-    vector<string> arrays;
-    vector<string> records;
-    return Identifiers(variables, arrays, records);
+    return Identifiers();
 }
 
 Identifiers ReadVariable::getDefinedVariables() {

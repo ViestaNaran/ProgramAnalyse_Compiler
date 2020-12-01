@@ -15,7 +15,11 @@ public:
     vector<string> records;
 
     Identifiers(vector<string> variables, vector<string> arrays, vector<string> records);
+    Identifiers();
     Identifiers merge(Identifiers identifiers);
+    void addVariable(string x);
+    void addArray(string A);
+    void addRecord(string R);
 };
 
 #endif /* Identifiers_h */

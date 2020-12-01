@@ -6,18 +6,13 @@ string DeclareRecord::getType() {
 }
 
 Identifiers DeclareRecord::getUsedVariables() {
-    vector<string> variables;
-    vector<string> arrays;
-    vector<string> records;
-    return Identifiers(variables, arrays, records);
+    return Identifiers();
 }
 
 Identifiers DeclareRecord::getDefinedVariables() {
-    vector<string> variables;
-    vector<string> arrays;
-    vector<string> records;
-    records.push_back(this->R);
-    return Identifiers(variables, arrays, records);
+    Identifiers i;
+    i.addRecord(this->R);
+    return i;
 }
 
 DeclareRecord::DeclareRecord(string R) {

@@ -6,18 +6,13 @@ string DeclareArray::getType() {
 }
 
 Identifiers DeclareArray::getUsedVariables() {
-    vector<string> variables;
-    vector<string> arrays;
-    vector<string> records;
-    return Identifiers(variables, arrays, records);
+    return Identifiers();
 }
 
 Identifiers DeclareArray::getDefinedVariables() {
-        vector<string> variables;
-    vector<string> arrays;
-    arrays.push_back(this->A);
-    vector<string> records;
-    return Identifiers(variables, arrays, records);
+    Identifiers i;
+    i.addArray(this->A);
+    return i;
 }
 
 DeclareArray::DeclareArray(string A) {

@@ -6,7 +6,7 @@
 #include <string>
 #include "../Identifiers.h"
 #include "Action.h"
-#include "Arithmetics/Arithmetic.h"
+#include "Arithmetic.h"
 #include "Arithmetics/Variable.h"
 
 

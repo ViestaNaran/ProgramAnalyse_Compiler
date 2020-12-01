@@ -7,11 +7,7 @@ Constant::Constant(int value){
 }
 
 Identifiers Constant::getUsedVariables() {
-    vector<string> variables;
-    vector<string> arrays;
-    vector<string> records;
-    return Identifiers(variables, arrays, records);
-
+    return Identifiers();
 }
 
 string Constant::toString() {

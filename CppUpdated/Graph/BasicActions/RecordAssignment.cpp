@@ -10,11 +10,9 @@ Identifiers RecordAssignment::getUsedVariables() {
 }
 
 Identifiers RecordAssignment::getDefinedVariables() {
-    vector<string> variables;
-    vector<string> arrays;
-    vector<string> records;
-    records.push_back(R->name);
-    return Identifiers(variables, arrays, records);
+    Identifiers i;
+    i.addRecord(this->R->name);
+    return i;
 }
 
 RecordAssignment::RecordAssignment(Record* R, string field, Arithmetic* a) {

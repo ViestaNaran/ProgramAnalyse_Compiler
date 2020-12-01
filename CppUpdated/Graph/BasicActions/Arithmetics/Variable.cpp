@@ -8,12 +8,9 @@ Variable::Variable(string name) {
 }
 
 Identifiers Variable::getUsedVariables() {
-    vector<string> variables;
-    variables.push_back(name);
-    vector<string> arrays;
-    vector<string> records;
-    return Identifiers(variables, arrays, records);
-
+    Identifiers i;
+    i.addVariable(name);
+    return i;
 }
 
 string Variable::toString() {

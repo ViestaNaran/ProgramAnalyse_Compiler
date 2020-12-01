@@ -6,10 +6,7 @@ string DeclareVariable::getType() {
 }
 
 Identifiers DeclareVariable::getUsedVariables() {
-    vector<string> variables;
-    vector<string> arrays;
-    vector<string> records;
-    return Identifiers(variables, arrays, records);
+    return Identifiers();
 }
 
 Identifiers DeclareVariable::getDefinedVariables() {

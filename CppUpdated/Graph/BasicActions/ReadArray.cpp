@@ -6,10 +6,7 @@ string ReadArray::getType() {
 }
 
 Identifiers ReadArray::getUsedVariables() {
-    vector<string> variables;
-    vector<string> arrays;
-    vector<string> records;
-    return Identifiers(variables, arrays, records);
+    return Identifiers();
 }
 
 Identifiers ReadArray::getDefinedVariables() {

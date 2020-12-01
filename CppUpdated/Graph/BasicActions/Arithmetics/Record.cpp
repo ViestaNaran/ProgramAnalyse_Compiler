@@ -9,11 +9,9 @@ Record::Record(string name, string field) {
 }
 
 Identifiers Record::getUsedVariables() {
-    vector<string> variables;
-    vector<string> arrays;
-    vector<string> records;
-    records.push_back(name);
-    return Identifiers(variables, arrays, records);
+    Identifiers i;
+    i.addRecord(name);
+    return i;
 }
 
 string Record::toString() {

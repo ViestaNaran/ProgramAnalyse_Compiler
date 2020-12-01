@@ -9,12 +9,9 @@ Array::Array(string name, Arithmetic* index) {
 }
 
 Identifiers Array::getUsedVariables() {
-    vector<string> variables;
-    vector<string> arrays;
-    arrays.push_back(name);
-    vector<string> records;
-    Identifiers id = Identifiers(variables, arrays, records);
-    return id.merge(index->getUsedVariables());
+    Identifiers i;
+    i.addArray(name);
+    return i.merge(index->getUsedVariables());
 }
 
 Identifiers Array::getUsedVariablesInIndex() {
